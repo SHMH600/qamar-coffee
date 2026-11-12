@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420"><rect width="800" height="420" fill="#eadfcb"/>
+<path d="M0 300q200-40 400 10t400-30v140H0z" fill="#b9d3d0"/><g stroke="#fff" stroke-width="16" fill="none"><path d="M0 120h800M0 230h800M180 0v300M420 0v300M640 0v300"/></g>
+<g stroke="#d6c4a3" stroke-width="3" fill="none"><path d="M0 60h800M100 0v300M300 0v300M540 0v300M720 0v300"/></g>
+<g fill="#d8c9a8"><rect x="200" y="140" width="200" height="75"/><rect x="450" y="140" width="170" height="75"/><rect x="200" y="30" width="200" height="75"/></g>
+<g transform="translate(420 150)"><path d="M0 0c-30-40-30-80 0-90c30 10 30 50 0 90z" fill="#b23a48" transform="translate(0 20)"/><circle cx="0" cy="-48" r="10" fill="#fff"/></g>
+<text x="440" y="195" font-family="Arial,sans-serif" font-size="20" font-weight="bold" fill="#3b2417">Qamar Coffee Roasters</text>
+<text x="30" y="110" font-family="Arial,sans-serif" font-size="14" fill="#6f4e37">Street 320</text><text x="30" y="220" font-family="Arial,sans-serif" font-size="14" fill="#6f4e37">Al Sadd Street</text></svg>
