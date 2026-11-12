@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- This section contains information about the webpage -->
+
+  <!-- Supports English text and special characters -->
+  <meta charset="utf-8">
+
+  <!-- Makes the website responsive on mobile phones and tablets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- The title displayed in the browser tab -->
+  <title>Register | Qamar Coffee Roasters</title>
+
+  <!-- A short description of the registration page -->
+  <meta name="description" content="Create a free Qamar Coffee Roasters account to receive offers and new-roast alerts.">
+
+  <!-- Adds the website logo to the browser tab -->
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+
+  <!-- Connects the HTML page to the external CSS file -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Allows keyboard users to skip directly to the main content -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+
+  <!-- ==========================================
+       HEADER SECTION
+       Contains the logo, navigation menu,
+       dark mode button, and shopping cart.
+       ========================================== -->
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+
+      <!-- Website logo and name -->
+      <!-- Clicking the logo takes the user to the homepage -->
+      <a class="brand" href="index.html">
+
+        <img src="images/logo.svg"
+             alt="Qamar Coffee Roasters logo"
+             width="44"
+             height="44">
+
+        <span class="brand-name">
+          Qamar <small>Coffee Roasters</small>
+        </span>
+
+      </a>
+
+
+      <!-- NAVIGATION MENU -->
+      <!-- These links allow users to move between the five pages -->
+
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+
+          <li><a href="about.html">About</a></li>
+
+          <li><a href="products-coffee.html">Coffee Beans</a></li>
+
+          <li><a href="products-equipment.html">Equipment &amp; Gifts</a></li>
+
+          <!-- aria-current shows that this is the current page -->
+          <li><a href="register.html" aria-current="page">Register</a></li>
+        </ul>
+
+      </nav>
+
+
+      <!-- HEADER BUTTONS -->
+
+      <div class="header-actions">
+
+        <!-- Changes the website between light and dark mode -->
+        <!-- JavaScript controls this button -->
+        <button type="button"
+                id="theme-toggle"
+                class="icon-btn"
+                aria-label="Switch to dark mode"
+                aria-pressed="false">☾</button>
+
+
+        <!-- Opens the shopping cart -->
+        <!-- The number shows how many products are in the cart -->
+        <button type="button"
+                id="cart-toggle"
+                class="cart-btn"
+                aria-label="Open shopping cart">
+
+          <span aria-hidden="true">🛒</span>
+
+          Cart
+
+          <span id="cart-count" class="cart-count is-empty">0</span>
+
+        </button>
+
+
+        <!-- Mobile menu button -->
+        <!-- Used to open and close navigation on small screens -->
+        <button type="button"
+                id="menu-toggle"
+                class="menu-toggle"
+                aria-expanded="false"
+                aria-controls="main-nav"
+                aria-label="Toggle menu">
+
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ==========================================
+       MAIN CONTENT
+       Contains the registration form.
+       ========================================== -->
+
+  <main id="main">
+
+
+    <!-- PAGE TITLE SECTION -->
+
+    <section class="page-banner" aria-labelledby="page-title">
+
+      <div class="container">
+
+        <!-- Main heading of the registration page -->
+        <h1 id="page-title">Create your account</h1>
+
+        <!-- Short introduction for the user -->
+        <p>Register to receive offers, new-roast alerts and a welcome gift.</p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         REGISTRATION SECTION
+         Contains an image and a registration form.
+         ========================================== -->
+
+    <section class="container section register-layout" aria-label="Registration">
+
+
+      <!-- Image displayed next to the registration form -->
+      <img class="register-img"
+           src="images/register-banner.svg"
+           alt="Cup of coffee with the words Join the Qamar family"
+           width="600"
+           height="700">
+
+
+      <!-- Container used to style the registration form -->
+      <div class="form-card">
+
+
+        <!-- REGISTRATION FORM -->
+        <!-- novalidate disables automatic browser validation -->
+        <!-- JavaScript is used to check the entered information -->
+        <!-- autocomplete="off" asks the browser not to autofill the form -->
+
+        <form id="register-form" novalidate autocomplete="off">
+
+
+
+          <!-- FULL NAME FIELD -->
+          <!-- The user must enter their full name -->
+          <!-- required means the field cannot be empty -->
+          <!-- maxlength limits the number of characters -->
+
+          <div class="form-row">
+
+            <label for="fullName">Full name</label>
+
+            <input type="text"
+                   id="fullName"
+                   name="fullName"
+                   required
+                   maxlength="60"
+                   autocomplete="name"
+                   aria-describedby="err-fullName">
+
+            <!-- JavaScript displays name errors here -->
+            <span id="err-fullName" class="error" role="alert"></span>
+
+          </div>
+
+
+
+          <!-- EMAIL FIELD -->
+          <!-- type="email" is used for email addresses -->
+          <!-- JavaScript checks if the email is valid -->
+
+          <div class="form-row">
+
+            <label for="email">Email address</label>
+
+            <input type="email"
+                   id="email"
+                   name="email"
+                   required
+                   maxlength="100"
+                   autocomplete="email"
+                   aria-describedby="err-email">
+
+            <!-- Displays an error if the email is incorrect -->
+            <span id="err-email" class="error" role="alert"></span>
+
+          </div>
+
+
+
+          <!-- MOBILE NUMBER FIELD -->
+          <!-- The user enters a Qatar mobile number -->
+          <!-- The number must contain exactly 8 digits -->
+
+          <div class="form-row">
+
+            <label for="mobile">Qatar mobile number</label>
+
+            <input type="tel"
+                   id="mobile"
+                   name="mobile"
+                   required
+                   inputmode="numeric"
+                   maxlength="8"
+                   placeholder="e.g. 55123456"
+                   autocomplete="tel-national"
+                   aria-describedby="err-mobile hint-mobile">
+
+            <!-- Instructions for entering the mobile number -->
+            <span id="hint-mobile" class="form-hint">
+              8 digits, without +974.
+            </span>
+
+            <!-- Displays an error if the mobile number is invalid -->
+            <span id="err-mobile" class="error" role="alert"></span>
+
+          </div>
+
+
+
+          <!-- DATE OF BIRTH FIELD -->
+          <!-- Allows the user to select their birth date -->
+          <!-- JavaScript checks that the user is at least 18 years old -->
+
+          <div class="form-row">
+
+            <label for="dob">Date of birth</label>
+
+            <input type="date"
+                   id="dob"
+                   name="dob"
+                   required
+                   aria-describedby="err-dob hint-dob">
+
+            <!-- Shows the minimum age requirement -->
+            <span id="hint-dob" class="form-hint">
+              You must be 18 or older.
+            </span>
+
+            <!-- Displays an error if the age is invalid -->
+            <span id="err-dob" class="error" role="alert"></span>
+
+          </div>
+
+
+
+          <!-- DELIVERY AREA FIELD -->
+          <!-- A dropdown list allows the user to select their area -->
+          <!-- select creates the dropdown menu -->
+          <!-- option defines each available choice -->
+
+          <div class="form-row">
+
+            <label for="area">Delivery area</label>
+
+            <select id="area"
+                    name="area"
+                    required
+                    aria-describedby="err-area">
+
+              <option value="">Choose your area…</option>
+
+              <option value="West Bay">West Bay</option>
+
+              <option value="The Pearl-Qatar">The Pearl-Qatar</option>
+
+              <option value="Lusail">Lusail</option>
+
+              <option value="Msheireb">Msheireb</option>
+
+              <option value="Al Sadd">Al Sadd</option>
+
+              <option value="Old Airport">Old Airport</option>
+
+              <option value="Al Rayyan">Al Rayyan</option>
+
+              <option value="Al Wakra">Al Wakra</option>
+
+              <option value="Al Khor">Al Khor</option>
+
+              <option value="Other area in Qatar">Other area in Qatar</option>
+
+            </select>
+
+            <!-- Displays an error if no delivery area is selected -->
+            <span id="err-area" class="error" role="alert"></span>
+
+          </div>
+
+
+
+          <!-- PASSWORD FIELD -->
+          <!-- type="password" hides the characters entered by the user -->
+          <!-- JavaScript checks password requirements -->
+
+          <div class="form-row">
+
+            <label for="password">Password</label>
+
+            <div class="password-box">
+
+              <input type="password"
+                     id="password"
+                     name="password"
+                     required
+                     maxlength="64"
+                     autocomplete="new-password"
+                     aria-describedby="err-password strength-text">
+
+              <!-- Allows users to show or hide their password -->
+              <button type="button"
+                      class="toggle-password"
+                      data-target="password"
+                      aria-pressed="false"
+                      aria-label="Show or hide password">Show</button>
+
+            </div>
+
+
+            <!-- PASSWORD STRENGTH INDICATOR -->
+            <!-- JavaScript changes the strength level -->
+            <!-- The four spans represent the strength bars -->
+
+            <div id="strength-meter"
+                 class="strength-meter level-0"
+                 aria-hidden="true">
+
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+
+            </div>
+
+
+            <!-- Displays the current password strength -->
+            <span id="strength-text" class="form-hint">
+              Password strength: Enter a password
+            </span>
+
+
+            <!-- Explains the password requirements -->
+            <span class="form-hint">
+              At least 8 characters with upper and lower case letters,
+              a number and a symbol.
+            </span>
+
+
+            <!-- Displays password validation errors -->
+            <span id="err-password" class="error" role="alert"></span>
+
+          </div>
+
+
+
+          <!-- CONFIRM PASSWORD FIELD -->
+          <!-- The user must enter the same password again -->
+          <!-- JavaScript compares both password fields -->
+
+          <div class="form-row">
+
+            <label for="confirm">Confirm password</label>
+
+            <div class="password-box">
+
+              <input type="password"
+                     id="confirm"
+                     name="confirm"
+                     required
+                     maxlength="64"
+                     autocomplete="new-password"
+                     aria-describedby="err-confirm">
+
+              <!-- Shows or hides the confirmation password -->
+              <button type="button"
+                      class="toggle-password"
+                      data-target="confirm"
+                      aria-pressed="false"
+                      aria-label="Show or hide confirm password">Show</button>
+
+            </div>
+
+            <!-- Displays an error if the passwords do not match -->
+            <span id="err-confirm" class="error" role="alert"></span>
+
+          </div>
+
+
+
+          <!-- ==========================================
+               COFFEE PREFERENCES
+               Users can select more than one option.
+               This section is optional.
+               ========================================== -->
+
+          <!-- fieldset groups related form controls -->
+          <!-- legend gives the group a title -->
+
+          <fieldset class="form-row">
+
+            <legend>Coffee preferences (optional)</legend>
+
+            <div class="check-grid">
+
+              <!-- Checkboxes allow multiple selections -->
+
+              <label class="check">
+                <input type="checkbox" name="prefs" value="Light roast">
+                Light roast
+              </label>
+
+              <label class="check">
+                <input type="checkbox" name="prefs" value="Medium roast">
+                Medium roast
+              </label>
+
+              <label class="check">
+                <input type="checkbox" name="prefs" value="Dark roast">
+                Dark roast
+              </label>
+
+              <label class="check">
+                <input type="checkbox" name="prefs" value="Espresso">
+                Espresso
+              </label>
+
+              <label class="check">
+                <input type="checkbox" name="prefs" value="Filter coffee">
+                Filter coffee
+              </label>
+
+              <label class="check">
+                <input type="checkbox" name="prefs" value="Decaf">
+                Decaf
+              </label>
+
+            </div>
+
+          </fieldset>
+
+
+
+          <!-- TERMS AND CONDITIONS -->
+          <!-- The user must accept the terms before registration -->
+
+          <div class="form-row">
+
+            <label class="check">
+
+              <input type="checkbox"
+                     id="terms"
+                     name="terms"
+                     required
+                     aria-describedby="err-terms">
+
+              I accept the terms and conditions and the privacy policy.
+
+            </label>
+
+            <!-- Displays an error if the terms are not accepted -->
+            <span id="err-terms" class="error" role="alert"></span>
+
+          </div>
+
+
+
+          <!-- SUBMIT BUTTON -->
+          <!-- Clicking this button starts the registration validation -->
+
+          <button type="submit" class="btn btn-large">
+            Create account
+          </button>
+
+
+        </form>
+
+
+
+        <!-- ==========================================
+             REGISTRATION SUCCESS MESSAGE
+             This section is hidden until the form
+             passes JavaScript validation.
+             ========================================== -->
+
+        <div id="success-box"
+             class="success-box"
+             tabindex="-1"
+             role="status"
+             hidden>
+
+
+          <!-- Displays a personalized welcome message -->
+          <h2 id="success-name"></h2>
+
+
+          <!-- Explains that this is a demonstration website -->
+          <p>
+            Your account details were checked successfully.
+            This demo does not send or save your information.
+          </p>
+
+
+
+          <!-- REGISTRATION SUMMARY TABLE -->
+          <!-- Shows the information entered by the user -->
+
+          <table class="guide-table">
+
+            <caption>Your registration summary</caption>
+
+            <tbody>
+
+              <!-- Displays the registered email -->
+              <tr>
+                <th scope="row">Email</th>
+                <td id="success-email"></td>
+              </tr>
+
+              <!-- Displays the selected delivery area -->
+              <tr>
+                <th scope="row">Delivery area</th>
+                <td id="success-area"></td>
+              </tr>
+
+              <!-- Displays the selected coffee preferences -->
+              <tr>
+                <th scope="row">Preferences</th>
+                <td id="success-prefs"></td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+
+
+          <!-- BUTTONS AFTER SUCCESSFUL REGISTRATION -->
+
+          <p>
+
+            <!-- Takes the user to the coffee products page -->
+            <a class="btn" href="products-coffee.html">
+              Start shopping
+            </a>
+
+            <!-- Allows the user to complete another registration -->
+            <button type="button"
+                    id="register-again"
+                    class="btn btn-outline">
+              Register another account
+            </button>
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- BACK TO TOP BUTTON -->
+  <!-- JavaScript shows this button when the user scrolls down -->
+  <!-- Clicking it returns the user to the top of the page -->
+
+  <button type="button"
+          id="back-to-top"
+          class="back-to-top"
+          aria-label="Back to top">↑</button>
+
+
+
+  <!-- ==========================================
+       FOOTER SECTION
+       Contains company information,
+       contact details, and social media links.
+       ========================================== -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+      <!-- COMPANY INFORMATION -->
+
+      <section aria-labelledby="f-about">
+
+        <h2 id="f-about">Qamar Coffee Roasters</h2>
+
+        <p>Small-batch specialty coffee, roasted fresh in Doha.</p>
+
+      </section>
+
+
+
+      <!-- CONTACT INFORMATION -->
+
+      <section aria-labelledby="f-contact">
+
+        <h2 id="f-contact">Contact us</h2>
+
+        <!-- address is used for contact information -->
+        <address>
+
+          Building 12, Street 320, Al Sadd, Doha, Qatar<br>
+
+          <!-- tel: allows users to call the phone number -->
+          Phone: <a href="tel:+97440001234">+974 4000 1234</a><br>
+
+          <!-- mailto: opens the user's email application -->
+          Email: <a href="mailto:hello@qamarcoffee.example">
+            hello@qamarcoffee.example
+          </a>
+
+        </address>
+
+      </section>
+
+
+
+      <!-- SOCIAL MEDIA LINKS -->
+
+      <section aria-labelledby="f-social">
+
+        <h2 id="f-social">Follow us</h2>
+
+        <ul class="social-list">
+
+          <!-- target="_blank" opens the link in a new tab -->
+
+          <li>
+            <a href="https://www.instagram.com/"
+               target="_blank"
+               rel="noopener noreferrer">Instagram</a>
+          </li>
+
+          <li>
+            <a href="https://www.tiktok.com/"
+               target="_blank"
+               rel="noopener noreferrer">TikTok</a>
+          </li>
+
+          <li>
+            <a href="https://x.com/"
+               target="_blank"
+               rel="noopener noreferrer">X (Twitter)</a>
+          </li>
+
+          <li>
+            <a href="https://www.whatsapp.com/"
+               target="_blank"
+               rel="noopener noreferrer">WhatsApp</a>
+          </li>
+
+        </ul>
+
+      </section>
+
+    </div>
+
+
+
+    <!-- COPYRIGHT INFORMATION -->
+    <!-- JavaScript can update the year automatically -->
+
+    <p class="copyright">
+      &copy; <span id="year">2026</span>
+      Qamar Coffee Roasters. All rights reserved.
+      Student web design project (fictional business).
+    </p>
+
+  </footer>
+
+
+
+  <!-- ==========================================
+       JAVASCRIPT FILES
+       These files add interactive features
+       to the website.
+       ========================================== -->
+
+
+  <!-- Contains the product information -->
+  <script src="js/products.js"></script>
+
+
+  <!-- Controls the shopping cart -->
+  <script src="js/cart.js"></script>
+
+
+  <!-- Controls common website features such as
+       navigation, dark mode, and back-to-top button -->
+  <script src="js/main.js"></script>
+
+
+  <!-- Checks registration information and
+       displays validation errors or success messages -->
+  <script src="js/register.js"></script>
+
+
+</body>
+</html>

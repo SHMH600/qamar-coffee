@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" width="600" height="700"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b2417"/><stop offset="1" stop-color="#6f4e37"/></linearGradient></defs>
+<rect width="600" height="700" fill="url(#g)"/><g transform="translate(150 190)"><path d="M0 110h300l-26 200a40 40 0 0 1-40 34H66a40 40 0 0 1-40-34z" fill="#f6efe6"/><path d="M298 140h28a56 56 0 0 1 0 110h-40" stroke="#f6efe6" stroke-width="20" fill="none"/><ellipse cx="150" cy="110" rx="150" ry="24" fill="#c8864b"/><ellipse cx="150" cy="110" rx="122" ry="15" fill="#2f1a10"/>
+<path d="M100 60q16-36 0-70M150 60q16-36 0-70M200 60q16-36 0-70" stroke="#f6efe6" stroke-width="9" stroke-linecap="round" fill="none" opacity=".7"/></g>
+<text x="300" y="610" text-anchor="middle" font-family="Georgia,serif" font-size="34" fill="#d9a441">Join the Qamar family</text></svg>

@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- This section contains information about the webpage -->
+
+  <!-- Supports English text and special characters -->
+  <meta charset="utf-8">
+
+  <!-- Makes the website responsive on phones and tablets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- The title displayed in the browser tab -->
+  <title>About Us | Qamar Coffee Roasters</title>
+
+  <!-- A short description of the About Us page -->
+  <meta name="description" content="Our story, mission, team, opening hours and contact details for Qamar Coffee Roasters in Doha.">
+
+  <!-- Adds the website logo to the browser tab -->
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+
+  <!-- Connects the HTML page to the external CSS file -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <!-- Allows keyboard users to skip directly to the main content -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+
+  <!-- ==========================================
+       HEADER SECTION
+       Contains the logo, navigation menu,
+       dark mode button, and shopping cart.
+       ========================================== -->
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+
+      <!-- WEBSITE LOGO -->
+      <!-- Clicking the logo takes the user to the homepage -->
+
+      <a class="brand" href="index.html">
+
+        <img src="images/logo.svg"
+             alt="Qamar Coffee Roasters logo"
+             width="44"
+             height="44">
+
+        <span class="brand-name">
+          Qamar <small>Coffee Roasters</small>
+        </span>
+
+      </a>
+
+
+      <!-- NAVIGATION MENU -->
+      <!-- Allows users to move between the five website pages -->
+
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+
+        <ul>
+
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+
+          <!-- aria-current indicates the page currently being viewed -->
+          <li>
+            <a href="about.html" aria-current="page">About</a>
+          </li>
+
+          <li>
+            <a href="products-coffee.html">Coffee Beans</a>
+          </li>
+
+          <li>
+            <a href="products-equipment.html">Equipment &amp; Gifts</a>
+          </li>
+
+          <li>
+            <a href="register.html">Register</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+      <!-- HEADER BUTTONS -->
+
+      <div class="header-actions">
+
+        <!-- DARK MODE BUTTON -->
+        <!-- JavaScript changes the website between light and dark mode -->
+
+        <button type="button"
+                id="theme-toggle"
+                class="icon-btn"
+                aria-label="Switch to dark mode"
+                aria-pressed="false">☾</button>
+
+
+        <!-- SHOPPING CART BUTTON -->
+        <!-- Opens the cart and displays the number of products -->
+
+        <button type="button"
+                id="cart-toggle"
+                class="cart-btn"
+                aria-label="Open shopping cart">
+
+          <span aria-hidden="true">🛒</span>
+
+          Cart
+
+          <span id="cart-count" class="cart-count is-empty">0</span>
+
+        </button>
+
+
+        <!-- MOBILE MENU BUTTON -->
+        <!-- Opens and closes the navigation menu on small screens -->
+
+        <button type="button"
+                id="menu-toggle"
+                class="menu-toggle"
+                aria-expanded="false"
+                aria-controls="main-nav"
+                aria-label="Toggle menu">
+
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ==========================================
+       MAIN CONTENT
+       Contains information about the company.
+       ========================================== -->
+
+  <main id="main">
+
+
+    <!-- PAGE TITLE SECTION -->
+    <!-- Displays the title and introduction of the page -->
+
+    <section class="page-banner" aria-labelledby="page-title">
+
+      <div class="container">
+
+        <!-- Main heading of the About Us page -->
+        <h1 id="page-title">About Qamar Coffee Roasters</h1>
+
+        <!-- Short description of the company -->
+        <p>A Doha family business with a passion for exceptional coffee.</p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         ABOUT US SECTION
+         Contains the company story, mission,
+         vision, and team information.
+         ========================================== -->
+
+    <section class="container section" aria-labelledby="tabs-title">
+
+      <h2 id="tabs-title">Who we are</h2>
+
+
+      <!-- TAB BUTTONS -->
+      <!-- JavaScript allows users to switch between sections -->
+      <!-- Only one tab panel is displayed at a time -->
+
+      <div class="tabs" role="tablist" aria-label="About us sections">
+
+
+        <!-- Shows the company story -->
+        <button type="button"
+                role="tab"
+                id="tab-story"
+                class="tab"
+                aria-selected="true"
+                aria-controls="panel-story"
+                tabindex="0">
+          Our story
+        </button>
+
+
+        <!-- Shows the company mission and vision -->
+        <button type="button"
+                role="tab"
+                id="tab-mission"
+                class="tab"
+                aria-selected="false"
+                aria-controls="panel-mission"
+                tabindex="-1">
+          Mission &amp; vision
+        </button>
+
+
+        <!-- Shows the company team members -->
+        <button type="button"
+                role="tab"
+                id="tab-team"
+                class="tab"
+                aria-selected="false"
+                aria-controls="panel-team"
+                tabindex="-1">
+          Our team
+        </button>
+
+      </div>
+
+
+
+      <!-- ==========================================
+           OUR STORY TAB
+           This panel is visible when the page loads.
+           ========================================== -->
+
+      <div id="panel-story"
+           class="tab-panel"
+           role="tabpanel"
+           aria-labelledby="tab-story">
+
+        <!-- Creates a two-column layout using CSS -->
+        <div class="two-col">
+
+
+          <!-- Image showing the coffee roasting business -->
+          <img src="images/about-roastery.svg"
+               alt="Illustration of the Qamar roastery with a roasting machine and coffee sacks"
+               width="800"
+               height="520">
+
+
+          <!-- Company history and information -->
+          <div>
+
+            <h3>From a market stand to a roastery</h3>
+
+            <p>
+              In 2021 Noora started roasting coffee in a tiny kitchen
+              in Doha and selling bags to friends through Instagram.
+              Word spread, and soon a weekend market stand could not
+              keep up with the orders.
+            </p>
+
+            <p>
+              In 2024 we opened our own roastery in Al Sadd.
+              Today we roast every week in small batches so that
+              each bag reaches you at its peak of flavour.
+            </p>
+
+
+            <!-- UNORDERED LIST -->
+            <!-- Shows important events in the company history -->
+
+            <ul class="check-list">
+
+              <li>2021: first bags sold on Instagram</li>
+
+              <li>2023: market stand at Souq Waqif weekends</li>
+
+              <li>2024: our own roastery opens in Al Sadd</li>
+
+              <li>2026: our first online shop</li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ==========================================
+           MISSION AND VISION TAB
+           Initially hidden until the user selects it.
+           ========================================== -->
+
+      <!-- The hidden attribute hides this panel -->
+      <!-- JavaScript removes hidden when the tab is selected -->
+
+      <div id="panel-mission"
+           class="tab-panel"
+           role="tabpanel"
+           aria-labelledby="tab-mission"
+           hidden>
+
+        <div class="two-col cards-2">
+
+
+          <!-- COMPANY MISSION -->
+
+          <article class="info-card">
+
+            <h3>Our mission</h3>
+
+            <p>
+              To make specialty coffee warm, simple and welcoming
+              for everyone in Qatar, by roasting fresh, sourcing
+              fairly and teaching people to brew well at home.
+            </p>
+
+          </article>
+
+
+
+          <!-- COMPANY VISION -->
+
+          <article class="info-card">
+
+            <h3>Our vision</h3>
+
+            <p>
+              To become the most loved local coffee brand in the Gulf,
+              known for quality, honesty and a premium experience
+              in every cup.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ==========================================
+           OUR TEAM TAB
+           Displays the employees of the company.
+           Initially hidden until selected.
+           ========================================== -->
+
+      <div id="panel-team"
+           class="tab-panel"
+           role="tabpanel"
+           aria-labelledby="tab-team"
+           hidden>
+
+
+        <!-- CSS Grid is used to organize the team cards -->
+        <div class="team-grid">
+
+
+          <!-- FIRST TEAM MEMBER -->
+
+          <article class="team-card">
+
+            <img src="images/team-noora.svg"
+                 alt="Portrait illustration of Noora Al-Thani"
+                 width="300"
+                 height="300">
+
+            <h3>Noora Al-Thani</h3>
+
+            <p class="role">Founder &amp; Head Roaster</p>
+
+            <p>
+              Noora designs every roast profile and tastes
+              each batch before it ships.
+            </p>
+
+          </article>
+
+
+
+          <!-- SECOND TEAM MEMBER -->
+
+          <article class="team-card">
+
+            <img src="images/team-khalid.svg"
+                 alt="Portrait illustration of Khalid Al-Mansoori"
+                 width="300"
+                 height="300">
+
+            <h3>Khalid Al-Mansoori</h3>
+
+            <p class="role">Brewing Specialist</p>
+
+            <p>
+              Khalid tests our equipment and runs
+              our weekend brewing workshops.
+            </p>
+
+          </article>
+
+
+
+          <!-- THIRD TEAM MEMBER -->
+
+          <article class="team-card">
+
+            <img src="images/team-sara.svg"
+                 alt="Portrait illustration of Sara Hassan"
+                 width="300"
+                 height="300">
+
+            <h3>Sara Hassan</h3>
+
+            <p class="role">Customer Experience Manager</p>
+
+            <p>
+              Sara looks after orders, gifts and every
+              question you send us.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         VISIT US SECTION
+         Contains opening hours, contact details,
+         and a map showing the business location.
+         ========================================== -->
+
+    <section class="section alt" aria-labelledby="visit-title">
+
+      <div class="container two-col">
+
+        <div>
+
+          <h2 id="visit-title">Visit us</h2>
+
+
+          <!-- OPENING HOURS -->
+
+          <h3>Opening hours</h3>
+
+
+          <!-- JavaScript checks if the shop is currently open -->
+          <!-- The message changes based on Qatar time -->
+
+          <p id="open-status"
+             class="open-status"
+             role="status">
+            Checking opening status…
+          </p>
+
+
+
+          <!-- OPENING HOURS TABLE -->
+          <!-- table organizes information into rows and columns -->
+
+          <table class="hours-table">
+
+            <!-- Table title -->
+            <caption>Roastery opening hours (Doha time)</caption>
+
+
+            <!-- TABLE HEADER -->
+            <!-- th defines a heading cell -->
+
+            <thead>
+
+              <tr>
+
+                <th scope="col">Day</th>
+
+                <th scope="col">Opens</th>
+
+                <th scope="col">Closes</th>
+
+              </tr>
+
+            </thead>
+
+
+
+            <!-- TABLE BODY -->
+            <!-- td contains normal table data -->
+
+            <tbody>
+
+              <tr>
+                <th scope="row">Sunday – Thursday</th>
+                <td>7:00 AM</td>
+                <td>11:00 PM</td>
+              </tr>
+
+              <tr>
+                <th scope="row">Friday</th>
+                <td>2:00 PM</td>
+                <td>11:00 PM</td>
+              </tr>
+
+              <tr>
+                <th scope="row">Saturday</th>
+                <td>8:00 AM</td>
+                <td>11:00 PM</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+
+
+          <!-- CONTACT DETAILS -->
+
+          <h3>Contact details</h3>
+
+
+          <!-- Unordered list containing the company contact information -->
+
+          <ul class="contact-list">
+
+
+            <!-- Company address -->
+            <li>
+              <strong>Address:</strong>
+              Building 12, Street 320, Al Sadd, Doha, Qatar
+            </li>
+
+
+            <!-- tel: allows users to call the phone number -->
+            <li>
+              <strong>Phone:</strong>
+              <a href="tel:+97440001234">+974 4000 1234</a>
+            </li>
+
+
+            <!-- mailto: opens the email application -->
+            <li>
+              <strong>Email:</strong>
+              <a href="mailto:hello@qamarcoffee.example">
+                hello@qamarcoffee.example
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+
+        <!-- LOCATION MAP -->
+        <!-- figure groups an image with its description -->
+
+        <figure>
+
+
+          <!-- Image showing the location of the business -->
+          <img src="images/map.svg"
+               alt="Simple map showing Qamar Coffee Roasters on Street 320 in Al Sadd, Doha"
+               width="800"
+               height="420">
+
+
+          <!-- figcaption adds a description below the image -->
+          <figcaption>
+
+            <strong>How to find us:</strong>
+
+            we are on Street 320 in Al Sadd,
+            a 3-minute walk from Al Sadd metro station,
+            with free parking behind the building.
+
+          </figcaption>
+
+        </figure>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         FREQUENTLY ASKED QUESTIONS (FAQ)
+         Contains common questions and answers.
+         ========================================== -->
+
+    <section class="container section" aria-labelledby="faq-title">
+
+      <h2 id="faq-title">Frequently asked questions</h2>
+
+
+      <!-- FAQ ACCORDION -->
+      <!-- JavaScript shows or hides answers when clicked -->
+      <!-- aria-expanded indicates if an answer is open or closed -->
+
+      <div class="accordion">
+
+
+
+        <!-- QUESTION 1 -->
+
+        <h3>
+
+          <button type="button"
+                  class="accordion-btn"
+                  id="faq-b1"
+                  aria-expanded="false"
+                  aria-controls="faq-1">
+
+            How fresh are your beans?
+
+          </button>
+
+        </h3>
+
+
+        <!-- Answer is hidden until the question is clicked -->
+        <div id="faq-1"
+             class="accordion-panel"
+             role="region"
+             aria-labelledby="faq-b1"
+             hidden>
+
+          <p>
+            We roast every week and ship within 48 hours of roasting.
+            The roast date is printed on every bag.
+          </p>
+
+        </div>
+
+
+
+        <!-- QUESTION 2 -->
+
+        <h3>
+
+          <button type="button"
+                  class="accordion-btn"
+                  id="faq-b2"
+                  aria-expanded="false"
+                  aria-controls="faq-2">
+
+            Do you deliver outside Doha?
+
+          </button>
+
+        </h3>
+
+
+        <div id="faq-2"
+             class="accordion-panel"
+             role="region"
+             aria-labelledby="faq-b2"
+             hidden>
+
+          <p>
+            Yes, we deliver across Qatar, including Al Wakra,
+            Al Rayyan, Lusail and Al Khor.
+            Delivery is free in Doha for orders over QAR 150.
+          </p>
+
+        </div>
+
+
+
+        <!-- QUESTION 3 -->
+
+        <h3>
+
+          <button type="button"
+                  class="accordion-btn"
+                  id="faq-b3"
+                  aria-expanded="false"
+                  aria-controls="faq-3">
+
+            Can I buy the beans ground?
+
+          </button>
+
+        </h3>
+
+
+        <div id="faq-3"
+             class="accordion-panel"
+             role="region"
+             aria-labelledby="faq-b3"
+             hidden>
+
+          <p>
+            Of course. Tell us your brewing method when we
+            contact you about your order and we will grind
+            the beans to match.
+          </p>
+
+        </div>
+
+
+
+        <!-- QUESTION 4 -->
+
+        <h3>
+
+          <button type="button"
+                  class="accordion-btn"
+                  id="faq-b4"
+                  aria-expanded="false"
+                  aria-controls="faq-4">
+
+            Can I pay online?
+
+          </button>
+
+        </h3>
+
+
+        <div id="faq-4"
+             class="accordion-panel"
+             role="region"
+             aria-labelledby="faq-b4"
+             hidden>
+
+          <p>
+            Not yet. This first version of our shop lets you
+            browse and build a cart, and our team will contact
+            you to complete the order.
+          </p>
+
+        </div>
+
+
+
+        <!-- QUESTION 5 -->
+
+        <h3>
+
+          <button type="button"
+                  class="accordion-btn"
+                  id="faq-b5"
+                  aria-expanded="false"
+                  aria-controls="faq-5">
+
+            Do you offer gift wrapping?
+
+          </button>
+
+        </h3>
+
+
+        <div id="faq-5"
+             class="accordion-panel"
+             role="region"
+             aria-labelledby="faq-b5"
+             hidden>
+
+          <p>
+            All of our gift boxes come gift wrapped with
+            a handwritten card, free of charge.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- BACK TO TOP BUTTON -->
+  <!-- JavaScript displays this button when the user scrolls down -->
+  <!-- Clicking it returns the user to the top of the page -->
+
+  <button type="button"
+          id="back-to-top"
+          class="back-to-top"
+          aria-label="Back to top">↑</button>
+
+
+
+  <!-- ==========================================
+       FOOTER SECTION
+       Contains company information,
+       contact details, and social media links.
+       ========================================== -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+      <!-- COMPANY INFORMATION -->
+
+      <section aria-labelledby="f-about">
+
+        <h2 id="f-about">Qamar Coffee Roasters</h2>
+
+        <p>
+          Small-batch specialty coffee, roasted fresh in Doha.
+        </p>
+
+      </section>
+
+
+
+      <!-- CONTACT INFORMATION -->
+
+      <section aria-labelledby="f-contact">
+
+        <h2 id="f-contact">Contact us</h2>
+
+
+        <!-- address is used for contact information -->
+
+        <address>
+
+          Building 12, Street 320, Al Sadd, Doha, Qatar<br>
+
+
+          <!-- Phone number link -->
+          Phone:
+          <a href="tel:+97440001234">+974 4000 1234</a><br>
+
+
+          <!-- Email address link -->
+          Email:
+          <a href="mailto:hello@qamarcoffee.example">
+            hello@qamarcoffee.example
+          </a>
+
+        </address>
+
+      </section>
+
+
+
+      <!-- SOCIAL MEDIA LINKS -->
+
+      <section aria-labelledby="f-social">
+
+        <h2 id="f-social">Follow us</h2>
+
+
+        <!-- target="_blank" opens the link in a new tab -->
+
+        <ul class="social-list">
+
+          <li>
+            <a href="https://www.instagram.com/"
+               target="_blank"
+               rel="noopener noreferrer">
+              Instagram
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.tiktok.com/"
+               target="_blank"
+               rel="noopener noreferrer">
+              TikTok
+            </a>
+          </li>
+
+          <li>
+            <a href="https://x.com/"
+               target="_blank"
+               rel="noopener noreferrer">
+              X (Twitter)
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.whatsapp.com/"
+               target="_blank"
+               rel="noopener noreferrer">
+              WhatsApp
+            </a>
+          </li>
+
+        </ul>
+
+      </section>
+
+    </div>
+
+
+
+    <!-- COPYRIGHT INFORMATION -->
+    <!-- JavaScript can update the year automatically -->
+
+    <p class="copyright">
+
+      &copy; <span id="year">2026</span>
+
+      Qamar Coffee Roasters. All rights reserved.
+      Student web design project (fictional business).
+
+    </p>
+
+  </footer>
+
+
+
+  <!-- ==========================================
+       JAVASCRIPT FILES
+       These files control the interactive
+       features of the website.
+       ========================================== -->
+
+
+  <!-- Contains product information -->
+  <script src="js/products.js"></script>
+
+
+  <!-- Controls the shopping cart and product counter -->
+  <script src="js/cart.js"></script>
+
+
+  <!-- Controls shared features such as navigation,
+       dark mode, and the back-to-top button -->
+  <script src="js/main.js"></script>
+
+
+  <!-- Controls the About Us tabs, FAQ accordion,
+       and opening hours status -->
+  <script src="js/about.js"></script>
+
+
+</body>
+</html>

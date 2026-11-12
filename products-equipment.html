@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- This section contains information about the webpage -->
+
+  <!-- Supports English text and special characters -->
+  <meta charset="utf-8">
+
+  <!-- Makes the website responsive on mobile phones and tablets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- The title displayed in the browser tab -->
+  <title>Equipment &amp; Gifts | Qamar Coffee Roasters</title>
+
+  <!-- A short description of the Equipment and Gifts page -->
+  <meta name="description" content="Brewing equipment, grinders and gift boxes for coffee lovers from Qamar Coffee Roasters in Doha.">
+
+  <!-- Displays the website logo in the browser tab -->
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+
+  <!-- Connects the HTML page to the external CSS file -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<!-- data-shop tells JavaScript which product range to display -->
+<!-- The value "equipment" means this page displays equipment and gifts -->
+<body data-shop="equipment">
+
+  <!-- Allows keyboard users to skip directly to the main content -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+
+
+  <!-- ==========================================
+       HEADER SECTION
+       Contains the logo, navigation menu,
+       dark mode button, and shopping cart.
+       ========================================== -->
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+
+
+      <!-- WEBSITE LOGO -->
+      <!-- Clicking the logo takes the user to the homepage -->
+
+      <a class="brand" href="index.html">
+
+        <img src="images/logo.svg"
+             alt="Qamar Coffee Roasters logo"
+             width="44"
+             height="44">
+
+        <span class="brand-name">
+          Qamar <small>Coffee Roasters</small>
+        </span>
+
+      </a>
+
+
+
+      <!-- NAVIGATION MENU -->
+      <!-- Allows users to move between the five website pages -->
+
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+
+        <ul>
+
+          <!-- Link to the homepage -->
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+
+          <!-- Link to the About Us page -->
+          <li>
+            <a href="about.html">About</a>
+          </li>
+
+          <!-- Link to the Coffee Beans page -->
+          <li>
+            <a href="products-coffee.html">Coffee Beans</a>
+          </li>
+
+          <!-- aria-current indicates that this is the current page -->
+          <li>
+            <a href="products-equipment.html" aria-current="page">
+              Equipment &amp; Gifts
+            </a>
+          </li>
+
+          <!-- Link to the registration page -->
+          <li>
+            <a href="register.html">Register</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+      <!-- HEADER BUTTONS -->
+
+      <div class="header-actions">
+
+
+        <!-- DARK MODE BUTTON -->
+        <!-- JavaScript changes the website between light and dark mode -->
+
+        <button type="button"
+                id="theme-toggle"
+                class="icon-btn"
+                aria-label="Switch to dark mode"
+                aria-pressed="false">☾</button>
+
+
+
+        <!-- SHOPPING CART BUTTON -->
+        <!-- Opens the cart and displays the number of added products -->
+
+        <button type="button"
+                id="cart-toggle"
+                class="cart-btn"
+                aria-label="Open shopping cart">
+
+          <!-- Shopping cart icon -->
+          <span aria-hidden="true">🛒</span>
+
+          Cart
+
+          <!-- JavaScript updates this number when products are added -->
+          <span id="cart-count" class="cart-count is-empty">0</span>
+
+        </button>
+
+
+
+        <!-- MOBILE MENU BUTTON -->
+        <!-- Opens and closes the navigation menu on small screens -->
+
+        <button type="button"
+                id="menu-toggle"
+                class="menu-toggle"
+                aria-expanded="false"
+                aria-controls="main-nav"
+                aria-label="Toggle menu">
+
+          <!-- These three spans create the hamburger menu icon -->
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ==========================================
+       MAIN CONTENT
+       Contains the products and delivery information.
+       ========================================== -->
+
+  <main id="main">
+
+
+
+    <!-- ==========================================
+         PAGE TITLE SECTION
+         Displays the heading and introduction.
+         ========================================== -->
+
+    <section class="page-banner" aria-labelledby="page-title">
+
+      <div class="container">
+
+        <!-- Main heading of the Equipment and Gifts page -->
+        <h1 id="page-title">Equipment &amp; Gifts</h1>
+
+        <!-- Short description of the products and prices -->
+        <p>
+          Everything you need to brew at home, plus gift boxes for coffee lovers.
+          All prices are in Qatari Riyals (QAR).
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         PRODUCTS SECTION
+         Contains search, sorting, category filters,
+         and the product display grid.
+         ========================================== -->
+
+    <section class="container section" aria-label="Products">
+
+
+
+      <!-- PRODUCT TOOLBAR -->
+      <!-- Contains the search box and sorting dropdown -->
+
+      <div class="toolbar">
+
+
+
+        <!-- ==========================================
+             SEARCH FORM
+             Allows users to search for equipment
+             and gift products.
+             ========================================== -->
+
+        <form id="search-form"
+              class="search-form"
+              role="search">
+
+          <!-- Label describes the search input -->
+          <label for="search-input">Search products</label>
+
+
+          <!-- type="search" creates a search input field -->
+          <!-- placeholder displays example text inside the input -->
+          <!-- maxlength limits the search to 40 characters -->
+          <!-- autocomplete="off" disables browser suggestions -->
+          <!-- JavaScript handles the product search -->
+
+          <input type="search"
+                 id="search-input"
+                 placeholder="Search by name or origin…"
+                 maxlength="40"
+                 autocomplete="off">
+
+        </form>
+
+
+
+        <!-- ==========================================
+             SORTING DROPDOWN
+             Allows users to change the order of products.
+             JavaScript performs the sorting.
+             ========================================== -->
+
+        <div class="sort-box">
+
+          <!-- Label for the sorting menu -->
+          <label for="sort-select">Sort by</label>
+
+
+          <!-- select creates a dropdown menu -->
+          <!-- option defines each sorting choice -->
+
+          <select id="sort-select">
+
+
+            <!-- Displays products in their default order -->
+            <option value="default">Featured</option>
+
+
+            <!-- Sorts products from lowest to highest price -->
+            <option value="low">Price: low to high</option>
+
+
+            <!-- Sorts products from highest to lowest price -->
+            <option value="high">Price: high to low</option>
+
+
+            <!-- Sorts products alphabetically -->
+            <option value="name">Name: A to Z</option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ==========================================
+           CATEGORY FILTERS
+           JavaScript creates category filter buttons here.
+           Users can select a category to filter products.
+           ========================================== -->
+
+      <!-- This div starts empty because JavaScript adds the buttons -->
+      <!-- role="group" identifies related filter buttons -->
+
+      <div id="category-filters"
+           class="chips"
+           role="group"
+           aria-label="Filter by category"></div>
+
+
+
+      <!-- ==========================================
+           RESULT COUNT
+           JavaScript displays the number of products
+           matching the search and selected filters.
+           ========================================== -->
+
+      <!-- role="status" helps announce updates to screen readers -->
+
+      <p id="result-count"
+         class="result-count"
+         role="status"></p>
+
+
+
+      <!-- ==========================================
+           PRODUCT GRID
+           JavaScript adds equipment and gift cards here.
+           CSS controls how the cards are displayed.
+           ========================================== -->
+
+      <!-- This div starts empty because JavaScript loads the products -->
+
+      <div id="product-grid" class="product-grid"></div>
+
+
+
+      <!-- ==========================================
+           NO RESULTS MESSAGE
+           Appears when no products match the search.
+           ========================================== -->
+
+      <!-- hidden keeps the message invisible until needed -->
+      <!-- JavaScript removes hidden when there are no results -->
+
+      <p id="no-results"
+         class="no-results"
+         hidden>
+        No products match your search. Try another word or category.
+      </p>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         DELIVERY AND GIFTING SECTION
+         Displays delivery areas, times, fees,
+         and additional product information.
+         ========================================== -->
+
+    <section class="section alt" aria-labelledby="deliv-title">
+
+      <div class="container">
+
+
+        <!-- Section heading -->
+        <h2 id="deliv-title">Delivery and gifting</h2>
+
+
+
+        <!-- ==========================================
+             DELIVERY OPTIONS TABLE
+             Shows delivery times and prices in Qatar.
+             ========================================== -->
+
+        <table class="guide-table">
+
+
+          <!-- Table title -->
+          <caption>Delivery options in Qatar</caption>
+
+
+
+          <!-- TABLE HEADER -->
+          <!-- th defines a table heading -->
+          <!-- scope="col" identifies column headings -->
+
+          <thead>
+
+            <tr>
+
+              <th scope="col">Area</th>
+
+              <th scope="col">Time</th>
+
+              <th scope="col">Fee</th>
+
+            </tr>
+
+          </thead>
+
+
+
+          <!-- TABLE BODY -->
+          <!-- tr creates a table row -->
+          <!-- td contains normal table data -->
+          <!-- scope="row" identifies a row heading -->
+
+          <tbody>
+
+
+
+            <!-- DELIVERY OPTION 1: DOHA -->
+
+            <tr>
+
+              <th scope="row">Doha</th>
+
+              <td>Same or next day</td>
+
+              <td>QAR 15 (free over QAR 150)</td>
+
+            </tr>
+
+
+
+            <!-- DELIVERY OPTION 2: NEARBY AREAS -->
+
+            <tr>
+
+              <th scope="row">Al Rayyan, Al Wakra, Lusail</th>
+
+              <td>1-2 days</td>
+
+              <td>QAR 25 (free over QAR 250)</td>
+
+            </tr>
+
+
+
+            <!-- DELIVERY OPTION 3: OTHER CITIES -->
+
+            <tr>
+
+              <th scope="row">Other cities</th>
+
+              <td>2-3 days</td>
+
+              <td>QAR 35</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+
+
+        <!-- ==========================================
+             ADDITIONAL INFORMATION
+             Displays gift wrapping and warranty details.
+             ========================================== -->
+
+        <!-- ul creates an unordered list -->
+        <!-- li represents each list item -->
+
+        <ul class="check-list">
+
+
+          <!-- Gift wrapping information -->
+          <li>
+            All gift boxes include free gift wrapping and a handwritten card.
+          </li>
+
+
+          <!-- Equipment warranty information -->
+          <li>
+            Equipment comes with a 12-month warranty.
+          </li>
+
+        </ul>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- ==========================================
+       BACK TO TOP BUTTON
+       JavaScript displays this button when scrolling.
+       Clicking it returns the user to the top.
+       ========================================== -->
+
+  <button type="button"
+          id="back-to-top"
+          class="back-to-top"
+          aria-label="Back to top">↑</button>
+
+
+
+  <!-- ==========================================
+       FOOTER SECTION
+       Contains company information,
+       contact details, and social media links.
+       ========================================== -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+
+      <!-- COMPANY INFORMATION -->
+
+      <section aria-labelledby="f-about">
+
+        <h2 id="f-about">Qamar Coffee Roasters</h2>
+
+        <p>
+          Small-batch specialty coffee, roasted fresh in Doha.
+        </p>
+
+      </section>
+
+
+
+      <!-- CONTACT INFORMATION -->
+
+      <section aria-labelledby="f-contact">
+
+        <h2 id="f-contact">Contact us</h2>
+
+
+        <!-- address contains the company's contact information -->
+
+        <address>
+
+          Building 12, Street 320, Al Sadd, Doha, Qatar<br>
+
+
+          <!-- tel: allows users to call the phone number -->
+          Phone:
+          <a href="tel:+97440001234">+974 4000 1234</a><br>
+
+
+          <!-- mailto: opens the user's email application -->
+          Email:
+          <a href="mailto:hello@qamarcoffee.example">hello@qamarcoffee.example</a>
+
+        </address>
+
+      </section>
+
+
+
+      <!-- SOCIAL MEDIA LINKS -->
+
+      <section aria-labelledby="f-social">
+
+        <h2 id="f-social">Follow us</h2>
+
+
+        <!-- target="_blank" opens the link in a new browser tab -->
+        <!-- rel="noopener noreferrer" improves security and privacy -->
+
+        <ul class="social-list">
+
+
+          <!-- Instagram -->
+          <li>
+            <a href="https://www.instagram.com/"
+               target="_blank"
+               rel="noopener noreferrer">Instagram</a>
+          </li>
+
+
+          <!-- TikTok -->
+          <li>
+            <a href="https://www.tiktok.com/"
+               target="_blank"
+               rel="noopener noreferrer">TikTok</a>
+          </li>
+
+
+          <!-- X (Twitter) -->
+          <li>
+            <a href="https://x.com/"
+               target="_blank"
+               rel="noopener noreferrer">X (Twitter)</a>
+          </li>
+
+
+          <!-- WhatsApp -->
+          <li>
+            <a href="https://www.whatsapp.com/"
+               target="_blank"
+               rel="noopener noreferrer">WhatsApp</a>
+          </li>
+
+        </ul>
+
+      </section>
+
+    </div>
+
+
+
+    <!-- COPYRIGHT INFORMATION -->
+    <!-- &copy; displays the copyright symbol -->
+    <!-- JavaScript can update the year automatically -->
+
+    <p class="copyright">
+
+      &copy; <span id="year">2026</span>
+
+      Qamar Coffee Roasters. All rights reserved.
+      Student web design project (fictional business).
+
+    </p>
+
+  </footer>
+
+
+
+  <!-- ==========================================
+       JAVASCRIPT FILES
+       These files add interactive features
+       to the website.
+       ========================================== -->
+
+
+  <!-- Contains the product information used by the website -->
+  <script src="js/products.js"></script>
+
+
+  <!-- Controls the shopping cart and product counter -->
+  <script src="js/cart.js"></script>
+
+
+  <!-- Controls common website features such as
+       navigation, dark mode, and back-to-top button -->
+  <script src="js/main.js"></script>
+
+
+  <!-- Controls product display, searching,
+       sorting, filtering, and shopping features -->
+  <script src="js/shop.js"></script>
+
+
+</body>
+</html>

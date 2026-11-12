@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- This section contains information about the webpage -->
+
+  <!-- Supports English text and special characters -->
+  <meta charset="utf-8">
+
+  <!-- Makes the website responsive on phones and tablets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- The title displayed in the browser tab -->
+  <title>Qamar Coffee Roasters | Specialty Coffee in Doha</title>
+
+  <!-- A short description of the website -->
+  <meta name="description" content="Qamar Coffee Roasters: specialty coffee beans, brewing equipment and gift boxes roasted and sold in Doha, Qatar.">
+
+  <!-- Displays the website logo in the browser tab -->
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+
+  <!-- Connects the HTML page to the external CSS file -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Allows keyboard users to skip directly to the main content -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+
+  <!-- ==========================================
+       HEADER SECTION
+       Contains the logo, navigation menu,
+       dark mode button, and shopping cart.
+       ========================================== -->
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+
+      <!-- WEBSITE LOGO -->
+      <!-- Clicking the logo takes the user to the homepage -->
+      <a class="brand" href="index.html">
+
+        <img src="images/logo.svg"
+             alt="Qamar Coffee Roasters logo"
+             width="44"
+             height="44">
+
+        <span class="brand-name">
+          Qamar <small>Coffee Roasters</small>
+        </span>
+
+      </a>
+
+
+      <!-- NAVIGATION MENU -->
+      <!-- Allows users to move between the five website pages -->
+
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+
+        <ul>
+
+          <!-- aria-current indicates the page currently being viewed -->
+          <li>
+            <a href="index.html" aria-current="page">Home</a>
+          </li>
+
+          <li>
+            <a href="about.html">About</a>
+          </li>
+
+          <li>
+            <a href="products-coffee.html">Coffee Beans</a>
+          </li>
+
+          <li>
+            <a href="products-equipment.html">Equipment &amp; Gifts</a>
+          </li>
+
+          <li>
+            <a href="register.html">Register</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+      <!-- HEADER BUTTONS -->
+      <div class="header-actions">
+
+        <!-- DARK MODE BUTTON -->
+        <!-- JavaScript changes the website between light and dark mode -->
+
+        <button type="button"
+                id="theme-toggle"
+                class="icon-btn"
+                aria-label="Switch to dark mode"
+                aria-pressed="false">☾</button>
+
+
+        <!-- SHOPPING CART BUTTON -->
+        <!-- Opens the cart and shows the number of products added -->
+
+        <button type="button"
+                id="cart-toggle"
+                class="cart-btn"
+                aria-label="Open shopping cart">
+
+          <span aria-hidden="true">🛒</span>
+
+          Cart
+
+          <span id="cart-count" class="cart-count is-empty">0</span>
+
+        </button>
+
+
+        <!-- MOBILE MENU BUTTON -->
+        <!-- Opens and closes the navigation menu on small screens -->
+
+        <button type="button"
+                id="menu-toggle"
+                class="menu-toggle"
+                aria-expanded="false"
+                aria-controls="main-nav"
+                aria-label="Toggle menu">
+
+          <!-- These three spans create the hamburger menu icon -->
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ==========================================
+       MAIN CONTENT
+       Contains the homepage sections.
+       ========================================== -->
+
+  <main id="main">
+
+
+    <!-- ==========================================
+         HERO BANNER / IMAGE SLIDER
+         Displays three promotional slides.
+         JavaScript controls the slide changes.
+         ========================================== -->
+
+    <section id="hero-slider"
+             class="hero"
+             aria-roledescription="carousel"
+             aria-label="Featured offers">
+
+      <!-- Container for all slider images -->
+      <div class="slides">
+
+
+        <!-- FIRST SLIDE -->
+        <!-- The active class makes this slide visible first -->
+
+        <div class="slide active" aria-hidden="false">
+
+          <!-- Main promotional image -->
+          <img src="images/hero-1.svg"
+               alt="Steaming cup of freshly brewed coffee on a dark brown background"
+               width="1600"
+               height="700">
+
+          <!-- Text displayed on top of the image -->
+          <div class="slide-caption">
+
+            <!-- Main heading of the homepage -->
+            <h1>Qamar Coffee Roasters</h1>
+
+            <!-- Company slogan -->
+            <p class="slogan">
+              Freshly roasted in Doha. Brewed to be remembered.
+            </p>
+
+            <!-- Button linking to the coffee products page -->
+            <a class="btn" href="products-coffee.html">
+              Shop coffee beans
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- SECOND SLIDE -->
+        <!-- Initially hidden until JavaScript displays it -->
+
+        <div class="slide" aria-hidden="true">
+
+          <img src="images/hero-2.svg"
+               alt="Illustration of a small-batch coffee roaster"
+               width="1600"
+               height="700">
+
+          <div class="slide-caption">
+
+            <!-- Promotional heading -->
+            <p class="slide-title">Small-batch roasting</p>
+
+            <!-- Description of the roasting process -->
+            <p class="slogan">
+              Every batch roasted by hand, every week,
+              in our Al Sadd roastery.
+            </p>
+
+            <!-- Takes the user to the About Us page -->
+            <a class="btn" href="about.html">
+              Read our story
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- THIRD SLIDE -->
+        <!-- Promotes gift boxes and a discount code -->
+
+        <div class="slide" aria-hidden="true">
+
+          <img src="images/hero-3.svg"
+               alt="Gift box with a red ribbon next to a bag of coffee"
+               width="1600"
+               height="700">
+
+          <div class="slide-caption">
+
+            <p class="slide-title">Gift boxes for coffee lovers</p>
+
+            <!-- Displays product prices and a promotional discount -->
+            <p class="slogan">
+              Beautiful sets from QAR 85.
+              Use code QAMAR10 for 10% off.
+            </p>
+
+            <!-- Takes the user to the equipment and gifts page -->
+            <a class="btn" href="products-equipment.html">
+              Browse gifts
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- SLIDER NAVIGATION BUTTONS -->
+      <!-- JavaScript uses these buttons to change slides -->
+
+      <!-- Displays the previous slide -->
+      <button type="button"
+              id="slide-prev"
+              class="slide-btn prev"
+              aria-label="Previous slide">‹</button>
+
+
+      <!-- Displays the next slide -->
+      <button type="button"
+              id="slide-next"
+              class="slide-btn next"
+              aria-label="Next slide">›</button>
+
+
+      <!-- SLIDER DOTS -->
+      <!-- JavaScript creates clickable dots for selecting slides -->
+      <div id="slider-dots"
+           class="dots"
+           role="group"
+           aria-label="Choose slide"></div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         COMPANY INTRODUCTION SECTION
+         Introduces the business and its features.
+         ========================================== -->
+
+    <section class="container section intro" aria-labelledby="intro-title">
+
+
+      <!-- INTRODUCTION TEXT -->
+      <div class="intro-text">
+
+        <h2 id="intro-title">Warm, premium and welcoming</h2>
+
+        <!-- Short company history -->
+        <p>
+          Qamar Coffee Roasters began as an Instagram page and a
+          weekend market stand. Today we roast specialty coffee beans,
+          and sell brewing equipment and gift boxes, for customers
+          who love a great cup at home.
+        </p>
+
+        <!-- Explains the purpose of the online shop -->
+        <p>
+          This is our first online shop: get to know us,
+          browse our two product ranges and register
+          to receive exclusive offers.
+        </p>
+
+      </div>
+
+
+
+      <!-- COMPANY FEATURES -->
+      <!-- An unordered list displays three business advantages -->
+
+      <ul class="feature-list">
+
+
+        <!-- FIRST FEATURE -->
+        <li>
+
+          <!-- strong makes the feature title important -->
+          <strong>Roasted weekly</strong>
+
+          <!-- span contains the feature description -->
+          <span>Fresh beans, never older than 10 days.</span>
+
+        </li>
+
+
+        <!-- SECOND FEATURE -->
+        <li>
+
+          <strong>Ethically sourced</strong>
+
+          <span>Direct trade with farms in four continents.</span>
+
+        </li>
+
+
+        <!-- THIRD FEATURE -->
+        <li>
+
+          <strong>Delivered in Qatar</strong>
+
+          <span>Free delivery in Doha over QAR 150.</span>
+
+        </li>
+
+      </ul>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         FEATURED PRODUCTS SECTION
+         Displays selected products from both ranges.
+         ========================================== -->
+
+    <section class="section alt" aria-labelledby="featured-title">
+
+      <div class="container">
+
+        <!-- Section heading -->
+        <h2 id="featured-title">Featured products</h2>
+
+        <!-- Short description -->
+        <p class="lead">
+          A taste of both of our ranges:
+          coffee beans and brewing equipment.
+        </p>
+
+
+        <!-- PRODUCT GRID -->
+        <!-- JavaScript adds the featured product cards here -->
+        <!-- CSS controls the grid layout -->
+
+        <div id="featured-grid" class="product-grid"></div>
+
+
+
+        <!-- PRODUCT CATEGORY BUTTONS -->
+        <!-- Allow users to browse the complete product ranges -->
+
+        <p class="center">
+
+          <!-- Link to coffee beans -->
+          <a class="btn btn-outline" href="products-coffee.html">
+            All coffee beans
+          </a>
+
+
+          <!-- Link to equipment and gifts -->
+          <a class="btn btn-outline" href="products-equipment.html">
+            All equipment &amp; gifts
+          </a>
+
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         CALL TO ACTION (CTA) SECTION
+         Encourages visitors to register.
+         ========================================== -->
+
+    <section class="container section cta" aria-labelledby="cta-title">
+
+      <!-- Section heading -->
+      <h2 id="cta-title">Join the Qamar family</h2>
+
+      <!-- Explains the benefits of registration -->
+      <p>
+        Create a free account and be the first to hear
+        about new roasts, offers and events.
+      </p>
+
+      <!-- Button linking to the registration page -->
+      <a class="btn btn-large" href="register.html">
+        Register now
+      </a>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- ==========================================
+       BACK TO TOP BUTTON
+       JavaScript displays this button when scrolling.
+       Clicking it returns the user to the top.
+       ========================================== -->
+
+  <button type="button"
+          id="back-to-top"
+          class="back-to-top"
+          aria-label="Back to top">↑</button>
+
+
+
+  <!-- ==========================================
+       FOOTER SECTION
+       Contains company information,
+       contact details, and social media links.
+       ========================================== -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+      <!-- COMPANY INFORMATION -->
+      <section aria-labelledby="f-about">
+
+        <h2 id="f-about">Qamar Coffee Roasters</h2>
+
+        <p>
+          Small-batch specialty coffee, roasted fresh in Doha.
+        </p>
+
+      </section>
+
+
+
+      <!-- CONTACT INFORMATION -->
+      <section aria-labelledby="f-contact">
+
+        <h2 id="f-contact">Contact us</h2>
+
+        <!-- address contains the company's contact details -->
+        <address>
+
+          Building 12, Street 320, Al Sadd, Doha, Qatar<br>
+
+          <!-- tel: allows users to call the phone number -->
+          Phone:
+          <a href="tel:+97440001234">+974 4000 1234</a><br>
+
+          <!-- mailto: opens the user's email application -->
+          Email:
+          <a href="mailto:hello@qamarcoffee.example">hello@qamarcoffee.example</a>
+
+        </address>
+
+      </section>
+
+
+
+      <!-- SOCIAL MEDIA LINKS -->
+      <section aria-labelledby="f-social">
+
+        <h2 id="f-social">Follow us</h2>
+
+        <!-- target="_blank" opens links in a new browser tab -->
+        <!-- rel="noopener noreferrer" improves security and privacy -->
+
+        <ul class="social-list">
+
+          <li>
+            <a href="https://www.instagram.com/"
+               target="_blank"
+               rel="noopener noreferrer">Instagram</a>
+          </li>
+
+          <li>
+            <a href="https://www.tiktok.com/"
+               target="_blank"
+               rel="noopener noreferrer">TikTok</a>
+          </li>
+
+          <li>
+            <a href="https://x.com/"
+               target="_blank"
+               rel="noopener noreferrer">X (Twitter)</a>
+          </li>
+
+          <li>
+            <a href="https://www.whatsapp.com/"
+               target="_blank"
+               rel="noopener noreferrer">WhatsApp</a>
+          </li>
+
+        </ul>
+
+      </section>
+
+    </div>
+
+
+
+    <!-- COPYRIGHT INFORMATION -->
+    <!-- &copy; displays the copyright symbol -->
+    <!-- JavaScript can update the year automatically -->
+
+    <p class="copyright">
+      &copy; <span id="year">2026</span>
+      Qamar Coffee Roasters. All rights reserved.
+      Student web design project (fictional business).
+    </p>
+
+  </footer>
+
+
+
+  <!-- ==========================================
+       JAVASCRIPT FILES
+       These files add interactive features
+       to the website.
+       ========================================== -->
+
+
+  <!-- Contains the product information used by the website -->
+  <script src="js/products.js"></script>
+
+
+  <!-- Controls the shopping cart and product counter -->
+  <script src="js/cart.js"></script>
+
+
+  <!-- Controls common website features such as
+       navigation, dark mode, and back-to-top button -->
+  <script src="js/main.js"></script>
+
+
+  <!-- Controls product display and shopping features -->
+  <script src="js/shop.js"></script>
+
+
+  <!-- Controls the homepage image slider,
+       navigation arrows, and slider dots -->
+  <script src="js/slider.js"></script>
+
+
+</body>
+</html>

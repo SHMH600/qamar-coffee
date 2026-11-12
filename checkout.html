@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Website character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Makes the page responsive on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Browser tab title -->
+    <title>Checkout | Qamar Coffee Roasters</title>
+
+    <!-- Page description -->
+    <meta name="description"
+          content="Complete your order at Qamar Coffee Roasters.">
+
+    <!-- Website icon -->
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--
+        JavaScript files are loaded in the correct order.
+
+        products.js:
+        Contains all coffee and equipment products.
+
+        cart.js:
+        Manages the shopping cart.
+
+        main.js:
+        Controls navigation, dark mode and other features.
+
+        checkout.js:
+        Will control the checkout process.
+        We will create it in Part 3.
+    -->
+    <script src="js/products.js" defer></script>
+    <script src="js/cart.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/checkout.js" defer></script>
+
+</head>
+
+<body>
+
+    <!-- Accessibility: Skip navigation -->
+    <a class="skip-link" href="#main">
+        Skip to main content
+    </a>
+
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <!-- Website logo -->
+            <a class="brand" href="index.html">
+
+                <img src="images/logo.svg"
+                     alt="Qamar Coffee Roasters logo"
+                     width="44"
+                     height="44">
+
+                <span class="brand-name">
+                    Qamar
+                    <small>Coffee Roasters</small>
+                </span>
+
+            </a>
+
+
+            <!-- Main navigation -->
+            <nav id="main-nav"
+                 class="main-nav"
+                 aria-label="Main navigation">
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+
+                    <li>
+                        <a href="products-coffee.html">
+                            Coffee Beans
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="products-equipment.html">
+                            Equipment &amp; Gifts
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="register.html">
+                            Register
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="checkout.html"
+                           aria-current="page">
+                            Checkout
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <!-- Header action buttons -->
+            <div class="header-actions">
+
+                <!-- Shopping cart button -->
+                <button
+                    id="cart-toggle"
+                    class="cart-btn"
+                    type="button"
+                    aria-label="Open shopping cart">
+
+                    <span aria-hidden="true">🛒</span>
+
+                    Cart
+
+                    <span id="cart-count"
+                          class="cart-count is-empty">
+                        0
+                    </span>
+
+                </button>
+
+
+                <!-- Dark mode button -->
+                <button
+                    id="theme-toggle"
+                    class="icon-btn"
+                    type="button"
+                    aria-label="Toggle dark mode">
+
+                    ☾
+
+                </button>
+
+
+                <!-- Mobile navigation button -->
+                <button
+                    id="menu-toggle"
+                    class="menu-toggle"
+                    type="button"
+                    aria-label="Toggle navigation"
+                    aria-controls="main-nav"
+                    aria-expanded="false">
+
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main id="main">
+
+
+        <!-- ================================================
+             CHECKOUT PAGE BANNER
+             ================================================ -->
+
+        <section class="page-banner">
+
+            <div class="container">
+
+                <h1>Checkout</h1>
+
+                <p>
+                    Complete your order with Qamar Coffee Roasters.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================================
+             CHECKOUT SECTION
+             ================================================ -->
+
+        <section class="checkout-page">
+
+            <div class="container">
+
+
+                <!-- Checkout introduction -->
+                <div class="checkout-heading">
+
+                    <h2>Complete Your Order</h2>
+
+                    <p>
+                        Please enter your information
+                        and review your order.
+                    </p>
+
+                </div>
+
+
+
+                <!-- ========================================
+                     CHECKOUT TWO-COLUMN LAYOUT
+                     ======================================== -->
+
+                <div class="checkout-layout">
+
+
+                    <!-- ====================================
+                         LEFT COLUMN: CHECKOUT FORM
+                         ==================================== -->
+
+                    <div class="checkout-form-section">
+
+
+                        <!--
+                            JavaScript will validate this form
+                            and process the demo order.
+                        -->
+
+                        <form id="checkout-form">
+
+
+                            <!-- ============================
+                                 CUSTOMER INFORMATION
+                                 ============================ -->
+
+                            <h2>1. Customer Information</h2>
+
+
+                            <!-- Full name -->
+                            <div class="form-group">
+
+                                <label for="customer-name">
+                                    Full Name *
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="customer-name"
+                                    name="customerName"
+                                    placeholder="Enter your full name"
+                                    autocomplete="name"
+                                    required>
+
+                                <span
+                                    class="error-message"
+                                    id="name-error"
+                                    aria-live="polite">
+                                </span>
+
+                            </div>
+
+
+
+                            <!-- Email address -->
+                            <div class="form-group">
+
+                                <label for="customer-email">
+                                    Email Address *
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="customer-email"
+                                    name="customerEmail"
+                                    placeholder="example@email.com"
+                                    autocomplete="email"
+                                    required>
+
+                                <span
+                                    class="error-message"
+                                    id="email-error"
+                                    aria-live="polite">
+                                </span>
+
+                            </div>
+
+
+
+                            <!-- Qatar phone number -->
+                            <div class="form-group">
+
+                                <label for="customer-phone">
+                                    Qatar Phone Number *
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="customer-phone"
+                                    name="customerPhone"
+                                    placeholder="XXXXXXXX"
+                                    inputmode="numeric"
+                                    maxlength="8"
+                                    pattern="[0-9]{8}"
+                                    title="Enter an 8-digit Qatar phone number"
+                                    autocomplete="tel"
+                                    required>
+
+                                <span
+                                    class="error-message"
+                                    id="phone-error"
+                                    aria-live="polite">
+                                </span>
+
+                            </div>
+
+
+
+                            <!-- ============================
+                                 DELIVERY INFORMATION
+                                 ============================ -->
+
+                            <h2>2. Delivery Information</h2>
+
+
+                            <!-- Delivery area -->
+                            <div class="form-group">
+
+                                <label for="delivery-area">
+                                    Delivery Area *
+                                </label>
+
+                                <select
+                                    id="delivery-area"
+                                    name="deliveryArea"
+                                    required>
+
+                                    <option value="">
+                                        Select your area
+                                    </option>
+
+                                    <option value="Doha">
+                                        Doha
+                                    </option>
+
+                                    <option value="Al Rayyan">
+                                        Al Rayyan
+                                    </option>
+
+                                    <option value="Lusail">
+                                        Lusail
+                                    </option>
+
+                                    <option value="Al Wakrah">
+                                        Al Wakrah
+                                    </option>
+
+                                    <option value="Umm Salal">
+                                        Umm Salal
+                                    </option>
+
+                                    <option value="Al Khor">
+                                        Al Khor
+                                    </option>
+
+                                    <option value="Other">
+                                        Other
+                                    </option>
+
+                                </select>
+
+                                <span
+                                    class="error-message"
+                                    id="area-error"
+                                    aria-live="polite">
+                                </span>
+
+                            </div>
+
+
+
+                            <!-- Delivery address -->
+                            <div class="form-group">
+
+                                <label for="delivery-address">
+                                    Delivery Address *
+                                </label>
+
+                                <textarea
+                                    id="delivery-address"
+                                    name="deliveryAddress"
+                                    rows="4"
+                                    placeholder="Street, building, zone and house number"
+                                    autocomplete="street-address"
+                                    required></textarea>
+
+                                <span
+                                    class="error-message"
+                                    id="address-error"
+                                    aria-live="polite">
+                                </span>
+
+                            </div>
+
+
+
+                            <!-- Additional delivery notes -->
+                            <div class="form-group">
+
+                                <label for="delivery-notes">
+                                    Additional Notes (Optional)
+                                </label>
+
+                                <textarea
+                                    id="delivery-notes"
+                                    name="deliveryNotes"
+                                    rows="3"
+                                    placeholder="Any special delivery instructions?"></textarea>
+
+                            </div>
+
+
+
+                            <!-- ============================
+                                 DELIVERY METHOD
+                                 ============================ -->
+
+                            <h2>3. Delivery Method</h2>
+
+
+                            <div class="delivery-options">
+
+
+                                <!-- Home delivery -->
+                                <label class="radio-option">
+
+                                    <input
+                                        type="radio"
+                                        name="deliveryMethod"
+                                        value="delivery"
+                                        checked>
+
+                                    <span>
+                                        Home Delivery
+                                    </span>
+
+                                </label>
+
+
+
+                                <!-- Store pickup -->
+                                <label class="radio-option">
+
+                                    <input
+                                        type="radio"
+                                        name="deliveryMethod"
+                                        value="pickup">
+
+                                    <span>
+                                        Store Pickup
+                                    </span>
+
+                                </label>
+
+
+                            </div>
+
+
+
+                            <!-- ============================
+                                 PAYMENT METHOD
+                                 ============================ -->
+
+                            <h2>4. Payment Method</h2>
+
+
+                            <div class="payment-options">
+
+
+                                <!-- Cash on delivery -->
+                                <label class="radio-option">
+
+                                    <input
+                                        type="radio"
+                                        name="paymentMethod"
+                                        value="cash"
+                                        checked>
+
+                                    <span>
+                                        Cash on Delivery / Pickup
+                                    </span>
+
+                                </label>
+
+
+                            </div>
+
+
+                            <!-- Demo payment notice -->
+                            <p class="payment-note">
+
+                                This is a demonstration checkout.
+                                No online payment will be processed.
+
+                            </p>
+
+
+
+                            <!-- ============================
+                                 PLACE ORDER BUTTON
+                                 ============================ -->
+
+                            <button
+                                type="submit"
+                                id="place-order-btn"
+                                class="btn">
+
+                                Place Order
+
+                            </button>
+
+
+                        </form>
+
+                    </div>
+
+
+
+                    <!-- ====================================
+                         RIGHT COLUMN: ORDER SUMMARY
+                         ==================================== -->
+
+                    <aside
+                        class="checkout-summary"
+                        aria-label="Order summary">
+
+
+                        <h2>Order Summary</h2>
+
+
+                        <!--
+                            JavaScript will display products
+                            from the shopping cart here.
+                        -->
+
+                        <div id="checkout-items">
+
+                            <p>
+                                Loading your cart...
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- ============================
+                             ORDER TOTALS
+                             ============================ -->
+
+                        <div class="checkout-totals">
+
+
+                            <!-- Subtotal -->
+                            <p>
+
+                                <span>Subtotal</span>
+
+                                <strong id="checkout-subtotal">
+                                    QAR 0.00
+                                </strong>
+
+                            </p>
+
+
+
+                            <!-- Discount -->
+                            <p>
+
+                                <span>Discount</span>
+
+                                <strong id="checkout-discount">
+                                    QAR 0.00
+                                </strong>
+
+                            </p>
+
+
+
+                            <!-- Delivery fee -->
+                            <p>
+
+                                <span>Delivery Fee</span>
+
+                                <strong id="checkout-delivery">
+                                    QAR 0.00
+                                </strong>
+
+                            </p>
+
+
+
+                            <!-- Final total -->
+                            <p class="checkout-total">
+
+                                <span>Total</span>
+
+                                <strong id="checkout-total">
+                                    QAR 0.00
+                                </strong>
+
+                            </p>
+
+
+                        </div>
+
+
+
+                        <!-- Continue shopping -->
+                        <a
+                            href="products-coffee.html"
+                            class="btn btn-outline">
+
+                            Continue Shopping
+
+                        </a>
+
+
+                    </aside>
+
+
+                </div>
+
+
+
+                <!-- ========================================
+                     ORDER CONFIRMATION
+                     ======================================== -->
+
+                <!--
+                    This section is hidden by default.
+
+                    JavaScript will show it after the
+                    customer successfully submits the form.
+                -->
+
+                <section
+                    id="order-success"
+                    class="order-success"
+                    aria-live="polite"
+                    hidden>
+
+
+                    <h2>
+                        Order Placed Successfully!
+                    </h2>
+
+
+                    <p>
+                        Thank you for choosing
+                        Qamar Coffee Roasters.
+                    </p>
+
+
+                    <p>
+                        Your demo order number is:
+                    </p>
+
+
+                    <p>
+                        <strong id="order-number">
+                            --
+                        </strong>
+                    </p>
+
+
+                    <p>
+                        This is a demonstration order.
+                        No payment has been collected,
+                        and no real order has been submitted.
+                    </p>
+
+
+                    <a
+                        href="index.html"
+                        class="btn">
+
+                        Back to Home
+
+                    </a>
+
+
+                </section>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+
+            <div class="footer-grid">
+
+
+                <!-- About the company -->
+                <div>
+
+                    <h2>Qamar Coffee Roasters</h2>
+
+                    <p>
+                        Freshly roasted coffee,
+                        crafted with passion in Qatar.
+                    </p>
+
+                </div>
+
+
+
+                <!-- Quick links -->
+                <div>
+
+                    <h2>Quick Links</h2>
+
+                    <ul>
+
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="about.html">About</a>
+                        </li>
+
+                        <li>
+                            <a href="products-coffee.html">
+                                Coffee Beans
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="products-equipment.html">
+                                Equipment &amp; Gifts
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="register.html">
+                                Register
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- Contact information -->
+                <div>
+
+                    <h2>Contact</h2>
+
+                    <address>
+                        Doha, Qatar
+                    </address>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- Copyright -->
+            <p class="copyright">
+
+                &copy;
+                <span id="year"></span>
+                Qamar Coffee Roasters.
+                All rights reserved.
+
+            </p>
+
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         BACK TO TOP BUTTON
+         ===================================================== -->
+
+    <button
+        id="back-to-top"
+        class="back-to-top"
+        type="button"
+        aria-label="Back to top">
+
+        ↑
+
+    </button>
+
+
+</body>
+
+</html>
