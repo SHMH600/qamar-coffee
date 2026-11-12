@@ -2239,5 +2239,148 @@ select.valid {
     }
 }
 
+/* ==========================================================
+   RESPONSIVE HERO SLIDER
+   Makes the homepage slider adapt to different screen sizes.
+   ========================================================== */
+
+/* Desktop and large screens */
+#hero-slider {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1600 / 700;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* All slides occupy the same slider area */
+#hero-slider .slides,
+#hero-slider .slide {
+  width: 100%;
+  height: 100%;
+}
+
+/* Display the complete image without cropping */
+#hero-slider .slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Responsive caption */
+#hero-slider .slide-caption {
+  position: absolute;
+  z-index: 2;
+  left: 7%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(48%, 650px);
+  max-width: 100%;
+}
+
+/* Responsive heading */
+#hero-slider .slide-caption h1,
+#hero-slider .slide-title {
+  font-size: clamp(1.5rem, 3.5vw, 3.5rem);
+  line-height: 1.15;
+}
+
+/* Responsive description */
+#hero-slider .slogan {
+  font-size: clamp(0.9rem, 1.5vw, 1.25rem);
+}
+
+/* ==========================================================
+   TABLET SCREENS
+   ========================================================== */
+
+@media (max-width: 900px) {
+
+  #hero-slider .slide-caption {
+    left: 6%;
+    width: 55%;
+  }
+
+  #hero-slider .slide-caption h1,
+  #hero-slider .slide-title {
+    font-size: clamp(1.4rem, 3.5vw, 2.5rem);
+  }
+
+}
+
+/* ==========================================================
+   MOBILE SCREENS
+   ========================================================== */
+
+@media (max-width: 600px) {
+
+  /* Keep the full banner image visible */
+  #hero-slider {
+    aspect-ratio: auto;
+    height: auto;
+    min-height: 0;
+  }
+
+  /* Allow the image and text to use natural height */
+  #hero-slider .slides {
+    position: relative;
+    height: auto;
+    aspect-ratio: 1600 / 700;
+  }
+
+  #hero-slider .slide {
+    height: 100%;
+  }
+
+  #hero-slider .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* Smaller text to fit the mobile screen */
+  #hero-slider .slide-caption {
+    left: 5%;
+    top: 50%;
+    width: 60%;
+    transform: translateY(-50%);
+    padding: 0;
+  }
+
+  #hero-slider .slide-caption h1,
+  #hero-slider .slide-title {
+    font-size: clamp(0.85rem, 3.8vw, 1.5rem);
+    line-height: 1.15;
+    margin-bottom: 6px;
+  }
+
+  #hero-slider .slogan {
+    font-size: clamp(0.65rem, 2.3vw, 0.95rem);
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  #hero-slider .slide-caption .btn {
+    font-size: 0.7rem;
+    padding: 7px 10px;
+  }
+
+  /* Adjust navigation buttons */
+  #hero-slider .slide-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+  }
+
+  /* Adjust slider dots */
+  #hero-slider .dots {
+    bottom: 8px;
+  }
+
+}
+
 
 /* ================= END OF STYLE.CSS ================= */
